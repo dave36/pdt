@@ -1,9 +1,11 @@
 # PDT (Pentesting Driven Tool) for ICS and SCADA
 
+<p>
 <a href="https://www.python.org/download/releases/2.7">
     <img src="https://img.shields.io/badge/Python-2.7-blue.svg">
 </a>
 <img src="https://img.shields.io/badge/made%20with-love-ff69b4">
+</p>
 
 
 ## 🚀 Getting Started
