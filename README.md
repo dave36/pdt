@@ -1,6 +1,7 @@
 # PDT (Pentesting Driven Tool) for ICS and SCADA
 
 <p>
+[![Build Status](https://travis-ci.org/dave36/pdt.svg?branch=master)](https://travis-ci.org/dave36/pdt)
 <a href="https://www.python.org/download/releases/2.7">
     <img src="https://img.shields.io/badge/Python-2.7-blue.svg">
 </a>
