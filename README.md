@@ -7,7 +7,7 @@
 <a href="https://www.python.org/download/releases/2.7">
     <img src="https://img.shields.io/badge/Python-2.7-blue.svg">
 </a>
-<img src="https://img.shields.io/badge/made%20with-love-ff69b4">
+	<img src="https://img.shields.io/badge/made%20with-love-ff69b4">
 </p>
 
 
@@ -17,12 +17,12 @@ The Pentesting Driven Tool for Industrial Control Systems and SCADA
 
 ### :inbox_tray: Installing :inbox_tray:
 
-A step by step series of examples that tell you how to get a development env running
+A step by step guide to get a development env running
 
 Clone the repository
 
 ```
-git clone
+git clone https://github.com/dave36/pdt.git
 ```
 
 Install the requirements
@@ -33,7 +33,7 @@ pip install -r requirements.txt
 
 ## 📦 Deployment
 
-Easy as executing the pdt.py class after following the instalation steps
+Easy as executing the pdt.py class after following the installation steps
 ```
 python pdt.py
 ```
