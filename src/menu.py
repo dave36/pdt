@@ -1,7 +1,10 @@
 import os
 import text
 import shodan
-from shodan_public_info.public_information import shodan_search
+from footprinting.api_shodan.shodan_collector import shodan_search
+from footprinting.api_hackertarget.reverse_dns_info import obtain_reverse_dns_info
+from footprinting.api_hackertarget.dns_info import obtain_dns_info
+
 
 ### Every menu of the tool.
 ### Each one is going to be in a separate function to get a clean code!
@@ -57,6 +60,14 @@ def footprinting_menu():
         choice = raw_input()
         if choice == '1':
             shodan_search()
+            footprinting_menu()
+            return
+        if choice == '2':
+            obtain_dns_info()
+            footprinting_menu()
+            return
+        if choice == '3':
+            obtain_reverse_dns_info()
             footprinting_menu()
             return
         if choice == str(len(text.footprinting_options)):   # Dont need to know which is the last option

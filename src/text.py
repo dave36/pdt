@@ -21,8 +21,8 @@ footprinting_description = ("""
 Footprinting modules to obtain public information of the company""")
 
 footprinting_options = ['Information of the organization',
-             'To do',
-             'To do',
+             'DNS Lookup',
+             'Reverse DNS Lookup',
              'To do',
              'Back']
 
