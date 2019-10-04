@@ -25,6 +25,7 @@ def shodan_search():
         raw_input("Press {return} to continue")
         return
     
+    #86.135.127.30
     #results = api.host('91.228.91.251')
     #results = api.host('158.174.45.254')
 

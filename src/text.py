@@ -23,7 +23,8 @@ Footprinting modules to obtain public information of the company""")
 footprinting_options = ['Information of the organization',
              'DNS Lookup',
              'Reverse DNS Lookup',
-             'To do',
+             'Whois Lookup',
+             'Subnet Lookup',
              'Back']
 
 fingerprinting_description = ("""

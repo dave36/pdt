@@ -1,9 +1,8 @@
 import os
 import text
-import shodan
 from footprinting.api_shodan.shodan_collector import shodan_search
-from footprinting.api_hackertarget.reverse_dns_info import obtain_reverse_dns_info
-from footprinting.api_hackertarget.dns_info import obtain_dns_info
+from footprinting.api_hackertarget import *
+
 
 
 ### Every menu of the tool.
@@ -63,11 +62,19 @@ def footprinting_menu():
             footprinting_menu()
             return
         if choice == '2':
-            obtain_dns_info()
+            dns_info.obtain_dns_info()
             footprinting_menu()
             return
         if choice == '3':
-            obtain_reverse_dns_info()
+            reverse_dns_info.obtain_reverse_dns_info()
+            footprinting_menu()
+            return
+        if choice == '4':
+            whois_lookup.whois_lookup()
+            footprinting_menu()
+            return
+        if choice == '5':
+            subnet_calculator.calc_subnet()
             footprinting_menu()
             return
         if choice == str(len(text.footprinting_options)):   # Dont need to know which is the last option
