@@ -25,6 +25,7 @@ footprinting_options = ['Information of the organization',
              'Reverse DNS Lookup',
              'Whois Lookup',
              'Subnet Lookup',
+             'Zone transfer',
              'Back']
 
 fingerprinting_description = ("""

@@ -12,8 +12,7 @@ api = shodan.Shodan(SHODAN_API_KEY)
 #    print(res['data'])
 #    print('')
 
-def shodan_search():
-    ip = raw_input("Enter the IPv4 target: ")
+def shodan_search(ip):
     if (is_valid_ip(ip) == False):
         print("Invalid IPv4 format")
         return
@@ -22,7 +21,6 @@ def shodan_search():
         results = api.host(ip)
     except:
         print("Something went wrong :(")
-        raw_input("Press {return} to continue")
         return
     
     #86.135.127.30
@@ -31,13 +29,11 @@ def shodan_search():
 
     #print(results)
 
-    print('Organization:\t' + results['org'])
-    print('Country:\t' + results['country_name'])
-    print('City:\t' + results['city'])
-    print('Latitude:' + str(results['latitude']))
-    print('IP:\t' + results['ip_str'])
-    
-    raw_input("\nPress {return} to continue")
+    if results['org'] != None:              print('Organization:\t' + results['org'])
+    if results['country_name'] != None:     print('Country:\t' + results['country_name'])
+    if results['city'] != None:             print('City:\t' + results['city'])
+    if results['latitude'] != None:         print('Latitude:' + str(results['latitude']))
+    if results['ip_str'] != None:           print('IP:\t' + results['ip_str'])
 
 
 def is_valid_ip(ip):

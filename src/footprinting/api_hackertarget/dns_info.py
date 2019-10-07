@@ -1,12 +1,12 @@
 import requests
 
 
-def obtain_dns_info():
-    target = raw_input("Enter the domain target: ")
+def obtain_dns_info(target):
+    """Function to get the information of the DNS records for a domain
+    :return
+        No return. Output the results obtained"""
+    # Request to the API to obtain the info
     url = "https://api.hackertarget.com/dnslookup/?q="+target
     request = requests.get(url)
-
     response = request.text
-    print(response)
-    raw_input("Press {return} to continue")
-    return
+    return response

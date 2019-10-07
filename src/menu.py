@@ -58,23 +58,39 @@ def footprinting_menu():
         create_menu(text.footprinting_description, text.footprinting_options)
         choice = raw_input()
         if choice == '1':
-            shodan_search()
+            ip = raw_input("Enter the IPv4 target: ")
+            shodan_search(ip)
+            raw_input("Press {return} to continue")
             footprinting_menu()
             return
         if choice == '2':
-            dns_info.obtain_dns_info()
+            target = raw_input("Enter the domain target: ")
+            print(dns_info.obtain_dns_info(target))
+            raw_input("Press {return} to continue")
             footprinting_menu()
             return
         if choice == '3':
-            reverse_dns_info.obtain_reverse_dns_info()
+            target = raw_input("Enter the IPv4 target: ")
+            print(reverse_dns_info.obtain_reverse_dns_info(target))
+            raw_input("Press {return} to continue")
             footprinting_menu()
             return
         if choice == '4':
-            whois_lookup.whois_lookup()
+            target = raw_input("Enter the domain or IPv4 target: ")
+            print(whois_lookup.whois_lookup(target))
+            raw_input("Press {return} to continue")
             footprinting_menu()
             return
         if choice == '5':
-            subnet_calculator.calc_subnet()
+            target = raw_input("Enter the domain or IPv4 target: ")
+            print(subnet_calculator.calc_subnet(target))
+            raw_input("Press {return} to continue")
+            footprinting_menu()
+            return
+        if choice == '6':
+            target = raw_input("Enter the domain target: ")
+            print(zone_transfer.obtain_zone_transfer(target))
+            raw_input("Press {return} to continue")
             footprinting_menu()
             return
         if choice == str(len(text.footprinting_options)):   # Dont need to know which is the last option
