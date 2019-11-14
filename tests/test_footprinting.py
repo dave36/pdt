@@ -1,11 +1,11 @@
 import unittest
-#from io import StringIO
 from io import BytesIO as StringIO
 import sys
 from src.menu import *
 from src.text import *
-from src.footprinting.api_hackertarget import *
-from src.footprinting.api_shodan.shodan_collector import shodan_search
+sys.path.append('src/01_Footprinting/')
+from api_hackertarget import *
+from api_shodan.shodan_collector import shodan_search
 
 
 ### python -m unittest discover -s tests

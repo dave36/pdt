@@ -1,4 +1,5 @@
 shodan
+python-nmap
 requests
 flask
 

@@ -1,8 +1,12 @@
 import os
 import text
-from footprinting.api_shodan.shodan_collector import shodan_search
-from footprinting.api_hackertarget import *
+import sys
+sys.path.append('src/01_Footprinting/')
+from api_shodan.shodan_collector import *
+from api_hackertarget.dns_info import *
 
+sys.path.append('src/02_Fingerprinting/')
+from nmap_scan import *
 
 
 ### Every menu of the tool.
@@ -102,7 +106,11 @@ def fingerprinting_menu():
         create_menu(text.fingerprinting_description, text.fingerprinting_options)
         choice = raw_input()
         if choice == '1':
-            break
+            target = raw_input("Enter the IPv4 target: ")
+            print(scan_open_ports(target))
+            raw_input("Press {return} to continue")
+            fingerprinting_menu()
+            return
         if choice == str(len(text.fingerprinting_options)):   # Dont need to know which is the last option
             break
 

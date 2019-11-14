@@ -31,7 +31,8 @@ footprinting_options = ['Information of the organization',
 fingerprinting_description = ("""
 Fingerprinting modules to obtain information of the target""")
 
-fingerprinting_options = ['Protocol used',
+fingerprinting_options = ['Open ports',
+             'Protocol used',
              'Version of the protocol',
              'To do',
              'To do',
