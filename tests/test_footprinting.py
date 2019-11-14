@@ -4,6 +4,10 @@ import sys
 from src.menu import *
 from src.text import *
 sys.path.append('src/01_Footprinting/')
+from api_hackertarget.dns_info import *
+from api_hackertarget.reverse_dns_info import *
+from api_hackertarget.subnet_calculator import *
+from api_hackertarget.whois_lookup import *
 from api_hackertarget import *
 from api_shodan.shodan_collector import shodan_search
 
