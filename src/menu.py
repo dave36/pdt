@@ -1,4 +1,5 @@
 import os
+from os import system, name
 import text
 import sys
 sys.path.append('src/01_Footprinting/')
@@ -161,7 +162,12 @@ def create_menu(description, options):
         No return, just output the menu to the user"""
 
     # Clean the prompt
-    os.system("clear")
+    # for windows
+    if name == 'nt':
+        os.system('cls')
+    # for mac and linux (os.name is 'posix')
+    else:
+        os.system('clear')
     # Output the title, description and options of the tool
     print_title()
     print(description)
