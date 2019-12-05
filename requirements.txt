@@ -2,4 +2,3 @@ shodan
 python-nmap
 requests
 flask
-pcapy
