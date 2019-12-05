@@ -8,6 +8,7 @@ from api_hackertarget.dns_info import *
 
 sys.path.append('src/02_Fingerprinting/')
 from nmap_scan import *
+from uid_scanner import *
 
 
 ### Every menu of the tool.
@@ -109,6 +110,12 @@ def fingerprinting_menu():
         if choice == '1':
             target = raw_input("Enter the IPv4 target: ")
             print(scan_open_ports(target))
+            raw_input("Press {return} to continue")
+            fingerprinting_menu()
+            return
+        if choice == '2':
+            target = raw_input("Enter the IPv4 target: ")
+            print(scan_uid(target))
             raw_input("Press {return} to continue")
             fingerprinting_menu()
             return

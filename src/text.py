@@ -32,9 +32,9 @@ fingerprinting_description = ("""
 Fingerprinting modules to obtain information of the target""")
 
 fingerprinting_options = ['Open ports',
+             'UID Scanner',
              'Protocol used',
              'Version of the protocol',
-             'To do',
              'To do',
              'Back']
 
