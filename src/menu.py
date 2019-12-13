@@ -115,7 +115,7 @@ def fingerprinting_menu():
             return
         if choice == '2':
             target = raw_input("Enter the IPv4 target: ")
-            print(scan_uid(target))
+            scan_uid(target)
             raw_input("Press {return} to continue")
             fingerprinting_menu()
             return
