@@ -32,9 +32,26 @@ fingerprinting_description = ("""
 Fingerprinting modules to obtain information of the target""")
 
 fingerprinting_options = ['Open ports',
-             'UID Scanner',
              'Protocol used',
-             'Version of the protocol',
+             'Modbus',
+             'Siemens S7',
+             'To do',
+             'Back']
+
+fingerprinting_modbus_description = ("""
+Fingerprinting modbus functions to interact with the Modbus devices and get some information of the target""")
+
+fingerprinting_modbus_options = ['Check Modbus Protocol',
+             'UID Scanner',
+             'Enumeration Function on Modbus',
+             'Read Coils',
+             'Back']
+
+fingerprinting_siemens_description = ("""
+Fingerprinting siemens functions to interact with the Siemens S7 devices and get some information of the target""")
+
+fingerprinting_siemens_options = ['Check Siemens Protocol',
+             'To do',
              'To do',
              'Back']
 
