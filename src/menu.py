@@ -12,6 +12,7 @@ from Modbus.discover_modbus import *
 from Modbus.uid_scanner import *
 from Modbus.get_functions import *
 from Modbus.read_coils import *
+from Modbus.read_discrete_input import *
 
 
 ### Every menu of the tool.
@@ -164,6 +165,14 @@ def fingerprinting_modbus_menu():
             target = raw_input("Enter the IPv4 target: ")
             uid = raw_input("Enter the UID Modbus: ")
             read_coils(target, uid)
+            raw_input("Press {return} to continue")
+            fingerprinting_modbus_menu()
+            return
+        # Choice 4: Read coils
+        if choice == '5':
+            target = raw_input("Enter the IPv4 target: ")
+            uid = raw_input("Enter the UID Modbus: ")
+            read_discrete_input(target, uid)
             raw_input("Press {return} to continue")
             fingerprinting_modbus_menu()
             return

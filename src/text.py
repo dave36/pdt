@@ -45,6 +45,7 @@ fingerprinting_modbus_options = ['Check Modbus Protocol',
              'UID Scanner',
              'Enumeration Function on Modbus',
              'Read Coils',
+             'Read Discrete Input',
              'Back']
 
 fingerprinting_siemens_description = ("""

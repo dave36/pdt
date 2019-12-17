@@ -18,13 +18,13 @@ def printLine(str,color):
     else:
         print str
 
-def read_coils(ip, uid):
+def read_discrete_input(ip, uid):
     c = connectToTarget(ip,502)
-    if c == None:
+    if(c == None):
         printLine('[-] Modbus is not running on : ' + ip,bcolors.WARNING)
         return
     printLine('[+] Connecting to ' + ip,bcolors.OKGREEN)
-    ans = c.sr1(ModbusADU(transId=getTransId(),unitId=int(uid))/ModbusPDU01_Read_Coils(startAddr=int(startAddr,16),quantity=int(quantity,16)),timeout=timeout, verbose=0)
+    ans = c.sr1(ModbusADU(transId=getTransId(),unitId=int(uid))/ModbusPDU02_Read_Discrete_Inputs(startAddr=int(startAddr,16),quantity=int(quantity,16)),timeout=timeout, verbose=0)
     ans = ModbusADU_Answer(str(ans))
     printLine('[+] Response is :',bcolors.OKGREEN)
     ans.show()
