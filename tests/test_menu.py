@@ -76,7 +76,7 @@ class MenuTestSuite(unittest.TestCase):
         # Function to test (creation of the footprinting menu)
         create_menu(exploitation_description, exploitation_options)
         # Assert that we are in the footprinting menu
-        self.assertTrue("Fingerprinting modules" in capturedOutput.getvalue())
+        self.assertTrue("Modules to exploit" in capturedOutput.getvalue())
 
 
 
