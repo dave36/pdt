@@ -5,7 +5,12 @@ import sys
 sys.path.append('src/01_Footprinting/')
 from api_shodan.shodan_collector import *
 from api_hackertarget.dns_info import *
+from api_hackertarget.reverse_dns_info import *
+from api_hackertarget.subnet_calculator import *
+from api_hackertarget.whois_lookup import *
+from api_hackertarget.zone_transfer import *
 
+#if name == 'posix':
 sys.path.append('src/02_Fingerprinting/')
 from nmap_scan import *
 from Modbus.discover_modbus import *
@@ -13,6 +18,13 @@ from Modbus.uid_scanner import *
 from Modbus.get_functions import *
 from Modbus.read_coils import *
 from Modbus.read_discrete_input import *
+from Modbus.read_exception_status import *
+from Modbus.read_holding_register import *
+from Modbus.read_input_register import *
+
+sys.path.append('src/03_Exploitation/')
+from Modbus_Exp.write_single_register import *
+from Modbus_Exp.write_single_coils import *
 
 
 ### Every menu of the tool.
@@ -69,35 +81,35 @@ def footprinting_menu():
         # Choice 2: DNS information
         if choice == '2':
             target = raw_input("Enter the domain target: ")
-            print(dns_info.obtain_dns_info(target))
+            print(obtain_dns_info(target))
             raw_input("Press {return} to continue")
             footprinting_menu()
             return
         # Choice 3: Reverse DNS information
         if choice == '3':
             target = raw_input("Enter the IPv4 target: ")
-            print(reverse_dns_info.obtain_reverse_dns_info(target))
+            print(obtain_reverse_dns_info(target))
             raw_input("Press {return} to continue")
             footprinting_menu()
             return
         # Choice 4: Whois record information
         if choice == '4':
             target = raw_input("Enter the domain or IPv4 target: ")
-            print(whois_lookup.whois_lookup(target))
+            print(whois_lookup(target))
             raw_input("Press {return} to continue")
             footprinting_menu()
             return
         # Choice 5: Calculate subnet range and some information
         if choice == '5':
             target = raw_input("Enter the domain or IPv4 target: ")
-            print(subnet_calculator.calc_subnet(target))
+            print(calc_subnet(target))
             raw_input("Press {return} to continue")
             footprinting_menu()
             return
         # Choice 6: DNS info about zone transfer
         if choice == '6':
             target = raw_input("Enter the domain target: ")
-            print(zone_transfer.obtain_zone_transfer(target))
+            print(obtain_zone_transfer(target))
             raw_input("Press {return} to continue")
             footprinting_menu()
             return
@@ -168,11 +180,35 @@ def fingerprinting_modbus_menu():
             raw_input("Press {return} to continue")
             fingerprinting_modbus_menu()
             return
-        # Choice 4: Read coils
+        # Choice 5: Read discrete inputs
         if choice == '5':
             target = raw_input("Enter the IPv4 target: ")
             uid = raw_input("Enter the UID Modbus: ")
             read_discrete_input(target, uid)
+            raw_input("Press {return} to continue")
+            fingerprinting_modbus_menu()
+            return
+        # Choice 6: Read exception status
+        if choice == '6':
+            target = raw_input("Enter the IPv4 target: ")
+            uid = raw_input("Enter the UID Modbus: ")
+            read_exception_status(target, uid)
+            raw_input("Press {return} to continue")
+            fingerprinting_modbus_menu()
+            return
+        # Choice 7: Read holding registers
+        if choice == '7':
+            target = raw_input("Enter the IPv4 target: ")
+            uid = raw_input("Enter the UID Modbus: ")
+            read_holding_register(target, uid)
+            raw_input("Press {return} to continue")
+            fingerprinting_modbus_menu()
+            return
+        # Choice 8: Read inputs registers
+        if choice == '8':
+            target = raw_input("Enter the IPv4 target: ")
+            uid = raw_input("Enter the UID Modbus: ")
+            read_input_register(target, uid)
             raw_input("Press {return} to continue")
             fingerprinting_modbus_menu()
             return
@@ -213,9 +249,32 @@ def exploitation_menu():
         choice = raw_input()
         if choice == '1':
             break
+        # Choice 2: Load the exploitation modbus menu
+        if choice == '2':
+            exploitation_modbus_menu()
         if choice == str(len(text.exploitation_options)):   # Dont need to know which is the last option
             break
 
+def exploitation_modbus_menu():
+    while 1:
+        create_menu(text.exploitation_modbus_description, text.exploitation_modbus_options)
+        choice = raw_input()
+        if choice == '1':
+            target = raw_input("Enter the IPv4 target: ")
+            uid = raw_input("Enter the UID Modbus: ")
+            write_single_register(target, uid)
+            raw_input("Press {return} to continue")
+            exploitation_menu()
+            return
+        if choice == '2':
+            target = raw_input("Enter the IPv4 target: ")
+            uid = raw_input("Enter the UID Modbus: ")
+            write_single_coils(target, uid)
+            raw_input("Press {return} to continue")
+            exploitation_menu()
+            return
+        if choice == str(len(text.exploitation_options)):   # Dont need to know which is the last option
+            break
 
 def reports_menu():
     while 1:

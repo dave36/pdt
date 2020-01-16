@@ -46,6 +46,9 @@ fingerprinting_modbus_options = ['Check Modbus Protocol',
              'Enumeration Function on Modbus',
              'Read Coils',
              'Read Discrete Input',
+             'Read Exception Status',
+             'Read Holding Registers',
+             'Read Inputs Registers',
              'Back']
 
 fingerprinting_siemens_description = ("""
@@ -57,10 +60,19 @@ fingerprinting_siemens_options = ['Check Siemens Protocol',
              'Back']
 
 exploitation_description = ("""
-Fingerprinting modules to exploit the target""")
+Modules to exploit the target""")
 
 exploitation_options = ['To do',
+             'Modbus',
              'To do',
+             'To do',
+             'Back']
+
+exploitation_modbus_description = ("""
+Modbus modules to exploit the target""")
+
+exploitation_modbus_options = ['Write Single Register',
+             'Write Single Coil',
              'To do',
              'To do',
              'Back']
