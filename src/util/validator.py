@@ -3,8 +3,8 @@ import validators
 def validate_ip(ip):
     """Function to validate the ip given"""
     if (is_valid_ip(ip) == False):
-        print("IP format incorrect")
-        return False
+      print("IP format incorrect")
+      return False
     return True
 
 
@@ -18,18 +18,18 @@ def validate_domain_name(name):
 
 def validate_ip_and_domain_name(target):
     """Function to validate both ip and domain name given"""
-    if (is_valid_ip(target) and is_valid_domain(target)) == False:
-        print("IP or domain name format incorrect")
-        return False
-    return True
+    if (is_valid_ip(target) or is_valid_domain(target)) == True:
+      return True
+    print("IP or domain name format incorrect")
+    return False
 
 
 def is_valid_ip(ip):
     """Auxiliary function to validate ipv4 or ipv6"""
-    if (is_valid_ipv4(ip) or is_valid_ipv6(ip)):
-        return True
+    if (is_valid_ipv4(ip) or is_valid_ipv6(ip)) == True:
+      return True
     else:
-        return False
+      return False
 
 
 def is_valid_ipv4(ip):

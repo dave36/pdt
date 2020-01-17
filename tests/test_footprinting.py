@@ -10,6 +10,7 @@ from api_hackertarget.subnet_calculator import *
 from api_hackertarget.whois_lookup import *
 from api_hackertarget import *
 from api_shodan.shodan_collector import shodan_search
+from src.util.validator import *
 
 
 ### python -m unittest discover -s tests
@@ -50,8 +51,7 @@ class FootprintingTestSuite(unittest.TestCase):
         target = "google.com"
         result = subnet_calculator.calc_subnet(target)
         self.assertIsNotNone(result)
-        self.assertTrue("Address" in result)
-        self.assertTrue("Netmask" in result)
+        self.assertTrue("Error" in result)
 
 
 if __name__ == '__main__':
