@@ -1,4 +1,5 @@
 import validators
+import re
 
 def validate_ip(ip):
     """Function to validate the ip given"""
