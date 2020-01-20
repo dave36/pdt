@@ -1,4 +1,7 @@
+import sys
 import requests
+sys.path.append('src/04_Reporting/')
+from report_log import *
 
 
 def obtain_dns_info(target):
@@ -9,4 +12,5 @@ def obtain_dns_info(target):
     url = "https://api.hackertarget.com/dnslookup/?q="+target
     request = requests.get(url)
     response = request.text
+    report_log(response)
     return response

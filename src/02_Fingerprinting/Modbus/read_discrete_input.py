@@ -7,7 +7,7 @@ from System.Core.Colors import *
 from System.Core.Modbus import *
 
 
-startAddr = '0x0000'
+startAddr = '0x0001'
 quantity = '0x0001'
 
 def printLine(str,color):

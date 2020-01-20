@@ -8,6 +8,7 @@ from api_hackertarget.dns_info import *
 from api_hackertarget.reverse_dns_info import *
 from api_hackertarget.subnet_calculator import *
 from api_hackertarget.whois_lookup import *
+from api_hackertarget.zone_transfer import *
 from api_hackertarget import *
 from api_shodan.shodan_collector import shodan_search
 from src.util.validator import *
@@ -38,7 +39,7 @@ class FootprintingTestSuite(unittest.TestCase):
         self.assertIsNotNone(result)
         self.assertTrue("GOOGLE.COM" in result)
 
-    """Test to determine the properties of a network subnet given an IPv4 address (class zone_transfer) """
+    """Test to determine the properties of a network subnet given an IPv4 address (class subnet_calculator) """
     def test_subnet_calculator(self):
         target = "8.8.8.8"
         result = subnet_calculator.calc_subnet(target)
@@ -46,8 +47,8 @@ class FootprintingTestSuite(unittest.TestCase):
         self.assertTrue("Address" in result)
         self.assertTrue("Netmask" in result)
 
-    """Test to determine the properties of a network subnet given an domain (class zone_transfer) """
-    def test_subnet_calculator(self):
+    """Test to determine the properties of a network subnet given an domain (class subnet_calculator) """
+    def test_zone_transfer(self):
         target = "google.com"
         result = subnet_calculator.calc_subnet(target)
         self.assertIsNotNone(result)

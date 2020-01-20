@@ -26,6 +26,8 @@ sys.path.append('src/03_Exploitation/')
 from Modbus_Exp.write_single_register import *
 from Modbus_Exp.write_single_coils import *
 
+sys.path.append('src/04_Reporting/')
+from report_log import *
 
 ### Every menu of the tool.
 ### Each one is going to be in a separate function to get a clean code!
@@ -87,7 +89,7 @@ def footprinting_menu():
             return
         # Choice 3: Reverse DNS information
         if choice == '3':
-            target = raw_input("Enter the IPv4 target: ")
+            target = raw_input("Enter the domain or IPv4 target: ")
             print(obtain_reverse_dns_info(target))
             raw_input("Press {return} to continue")
             footprinting_menu()
@@ -281,7 +283,10 @@ def reports_menu():
         create_menu(text.reports_description, text.reports_options)
         choice = raw_input()
         if choice == '1':
-            break
+            show_report()
+            raw_input("Press {return} to continue")
+            reports_menu()
+            return
         if choice == str(len(text.reports_options)):   # Dont need to know which is the last option
             break
 

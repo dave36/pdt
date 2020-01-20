@@ -80,8 +80,8 @@ exploitation_modbus_options = ['Write Single Register',
 reports_description = ("""
 Get the report of the results of the security audit""")
 
-reports_options = ['HTML Report',
-             'PDF Report',
+reports_options = ['Text Report',
+             'HTML Report',
              'Back']
 
 update_description = ("""

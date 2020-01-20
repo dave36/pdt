@@ -7,9 +7,12 @@ author='David Lorenzo',
 url='https://github.com/dave36'
 """
 
-
 from src.menu import *
+sys.path.append('src/04_Reporting/')
+from report_log import *
 
+# Reset the log for previous reports
+reset_log()
 # Show the main menu
 main_menu()
 
