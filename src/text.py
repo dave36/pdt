@@ -62,7 +62,7 @@ fingerprinting_siemens_options = ['Collect information about Siemens S7 PLCs',
 exploitation_description = ("""
 Modules to exploit the target""")
 
-exploitation_options = ['To do',
+exploitation_options = ['Common ICS Default Passwords',
              'Modbus',
              'To do',
              'To do',

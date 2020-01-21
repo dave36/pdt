@@ -26,6 +26,7 @@ from Siemens.enumerate_siemens import *
 from Siemens.s7_scan import *
 
 sys.path.append('src/03_Exploitation/')
+from Default_passwords.parser_passwords import *
 from Modbus_Exp.write_single_register import *
 from Modbus_Exp.write_single_coils import *
 
@@ -253,7 +254,10 @@ def exploitation_menu():
         create_menu(text.exploitation_description, text.exploitation_options)
         choice = raw_input()
         if choice == '1':
-            break
+            print_default_passwords()
+            raw_input("Press {return} to continue")
+            exploitation_menu()
+            return
         # Choice 2: Load the exploitation modbus menu
         if choice == '2':
             exploitation_modbus_menu()
