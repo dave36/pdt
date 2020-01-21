@@ -21,6 +21,9 @@ from Modbus.read_discrete_input import *
 from Modbus.read_exception_status import *
 from Modbus.read_holding_register import *
 from Modbus.read_input_register import *
+from Siemens.discover_siemens import *
+from Siemens.enumerate_siemens import *
+from Siemens.s7_scan import *
 
 sys.path.append('src/03_Exploitation/')
 from Modbus_Exp.write_single_register import *
@@ -152,7 +155,7 @@ def fingerprinting_modbus_menu():
     while 1:
         create_menu(text.fingerprinting_modbus_description, text.fingerprinting_modbus_options)
         choice = raw_input("(pdt/fingerprinting/modbus) > ")
-        # Choice 1: Check if Modbus is running (default port 502)
+        # Choice 1: Modbus information (with nmap nse script)
         if choice == '1':
             target = raw_input("Enter the IPv4 target: ")
             discover_modbus(target)
@@ -225,19 +228,19 @@ def fingerprinting_siemens_menu():
         choice = raw_input()
         if choice == '1':
             target = raw_input("Enter the IPv4 target: ")
-            scan_uid(target)
+            discover_siemens(target)
             raw_input("Press {return} to continue")
             fingerprinting_siemens_menu()
             return
         if choice == '2':
             target = raw_input("Enter the IPv4 target: ")
-            scan_uid(target)
+            enumerate_siemens(target)
             raw_input("Press {return} to continue")
             fingerprinting_siemens_menu()
             return
         if choice == '3':
             target = raw_input("Enter the IPv4 target: ")
-            scan_uid(target)
+            scan_siemens(target)
             raw_input("Press {return} to continue")
             fingerprinting_siemens_menu()
             return

@@ -16,7 +16,7 @@ def report_log(text):
     outfile.close()
 
 def reset_log():
-    with open(log_path,'w') as outfile:
+    with open("src/04_Reporting/report.txt",'w') as outfile:
         outfile.write("Begin of the automatic report from PDT\n\n")
     outfile.close()
 

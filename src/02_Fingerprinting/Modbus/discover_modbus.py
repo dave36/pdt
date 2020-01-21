@@ -1,5 +1,7 @@
 import os
 import sys
+import nmap
+import pprint
 
 sys.path.append('src/04_Reporting/')
 from report_log import *
@@ -28,13 +30,12 @@ def printLine(str,color):
     return"""
 
 def discover_modbus(target):
-    result = ""
     try:
-        report_log("Result of scanning the target")
+        report_log("Result of scanning the modbus target")
         scanner = nmap.PortScanner()
-        scanner.scan(target, arguments='-Pn -sT -p502 --script modbus-discover')
-        result = scanner.csv()
-        report_log(result)
+        result = scanner.scan(target, arguments='-Pn -sT -p502 --script modbus-discover')
+        pprint.pprint(result["scan"])
+        report_log(result["scan"])
     except:
         print("Nmap not installed")
     return result

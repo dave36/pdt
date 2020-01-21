@@ -41,7 +41,7 @@ fingerprinting_options = ['Open ports',
 fingerprinting_modbus_description = ("""
 Fingerprinting modbus functions to interact with the Modbus devices and get some information of the target""")
 
-fingerprinting_modbus_options = ['Check Modbus Protocol',
+fingerprinting_modbus_options = ['Modbus Information',
              'UID Scanner',
              'Enumeration Function on Modbus',
              'Read Coils',
@@ -54,9 +54,9 @@ fingerprinting_modbus_options = ['Check Modbus Protocol',
 fingerprinting_siemens_description = ("""
 Fingerprinting siemens functions to interact with the Siemens S7 devices and get some information of the target""")
 
-fingerprinting_siemens_options = ['Check Siemens Protocol',
-             'To do',
-             'To do',
+fingerprinting_siemens_options = ['Collect information about Siemens S7 PLCs',
+             'Identify and enumerate Siemens S7 PLCs',
+             'Scan Siemens S7',
              'Back']
 
 exploitation_description = ("""
