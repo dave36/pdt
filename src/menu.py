@@ -13,6 +13,7 @@ from api_hackertarget.zone_transfer import *
 #if name == 'posix':
 sys.path.append('src/02_Fingerprinting/')
 from nmap_scan import *
+from plc_scanner import *
 from Modbus.discover_modbus import *
 from Modbus.uid_scanner import *
 from Modbus.get_functions import *
@@ -29,6 +30,7 @@ sys.path.append('src/03_Exploitation/')
 from Default_passwords.parser_passwords import *
 from Modbus_Exp.write_single_register import *
 from Modbus_Exp.write_single_coils import *
+from Siemens_Exp.s7_pwd_hashes_extractor import *
 
 sys.path.append('src/04_Reporting/')
 from report_log import *
@@ -135,10 +137,10 @@ def fingerprinting_menu():
             raw_input("Press {return} to continue")
             fingerprinting_menu()
             return
-        # Choice 2: Identify protocol and version if possible
+        # Choice 2: Scan PLCs
         if choice == '2':
             target = raw_input("Enter the IPv4 target: ")
-            scan_uid(target)
+            scan_plcs(target)
             raw_input("Press {return} to continue")
             fingerprinting_menu()
             return
@@ -226,7 +228,7 @@ def fingerprinting_modbus_menu():
 def fingerprinting_siemens_menu():
     while 1:
         create_menu(text.fingerprinting_siemens_description, text.fingerprinting_siemens_options)
-        choice = raw_input()
+        choice = raw_input("(pdt/fingerprinting/siemens_s7) > ")
         if choice == '1':
             target = raw_input("Enter the IPv4 target: ")
             discover_siemens(target)
@@ -252,7 +254,8 @@ def fingerprinting_siemens_menu():
 def exploitation_menu():
     while 1:
         create_menu(text.exploitation_description, text.exploitation_options)
-        choice = raw_input()
+        choice = raw_input("(pdt/exploitation) > ")
+        # Choice 1: Common ICS Default Passwords
         if choice == '1':
             print_default_passwords()
             raw_input("Press {return} to continue")
@@ -261,34 +264,57 @@ def exploitation_menu():
         # Choice 2: Load the exploitation modbus menu
         if choice == '2':
             exploitation_modbus_menu()
+        # Choice 3: Load the exploitation siemens menu
+        if choice == '3':
+            exploitation_siemens_menu()
         if choice == str(len(text.exploitation_options)):   # Dont need to know which is the last option
             break
 
 def exploitation_modbus_menu():
     while 1:
         create_menu(text.exploitation_modbus_description, text.exploitation_modbus_options)
-        choice = raw_input()
+        choice = raw_input("(pdt/exploitation/modbus) > ")
         if choice == '1':
             target = raw_input("Enter the IPv4 target: ")
             uid = raw_input("Enter the UID Modbus: ")
             write_single_register(target, uid)
             raw_input("Press {return} to continue")
-            exploitation_menu()
+            exploitation_modbus_menu()
             return
         if choice == '2':
             target = raw_input("Enter the IPv4 target: ")
             uid = raw_input("Enter the UID Modbus: ")
             write_single_coils(target, uid)
             raw_input("Press {return} to continue")
-            exploitation_menu()
+            exploitation_modbus_menu()
             return
-        if choice == str(len(text.exploitation_options)):   # Dont need to know which is the last option
+        if choice == str(len(text.exploitation_modbus_options)):   # Dont need to know which is the last option
+            break
+
+def exploitation_siemens_menu():
+    while 1:
+        create_menu(text.exploitation_siemens_description, text.exploitation_siemens_options)
+        choice = raw_input("(pdt/exploitation/siemens) > ")
+        if choice == '1':
+            file = raw_input("Enter the path to the PLF file: ")
+            extract_s7_password_hashes(file)
+            raw_input("Press {return} to continue")
+            exploitation_siemens_menu()
+            return
+        if choice == '2':
+            target = raw_input("Enter the IPv4 target: ")
+            uid = raw_input("Enter the UID Modbus: ")
+            write_single_coils(target, uid)
+            raw_input("Press {return} to continue")
+            exploitation_modbus_menu()
+            return
+        if choice == str(len(text.exploitation_siemens_options)):   # Dont need to know which is the last option
             break
 
 def reports_menu():
     while 1:
         create_menu(text.reports_description, text.reports_options)
-        choice = raw_input()
+        choice = raw_input("(pdt/reports) > ")
         if choice == '1':
             show_report()
             raw_input("Press {return} to continue")

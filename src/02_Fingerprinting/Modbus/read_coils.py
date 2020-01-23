@@ -11,7 +11,7 @@ from System.Core.Modbus import *
 
 
 startAddr = '0x0000'
-quantity = '0x0001'
+quantity = '0x0004'
 
 def printLine(str,color):
     if(str.find('[+]') != -1):
@@ -43,7 +43,7 @@ def ask_address():
     global startAddr
     global quantity
     startAddr = '0'
-    address = raw_input("Enter the coil address you want to read (default address is 0): ")
+    address = raw_input("Enter the coil address you want to read: ")
     # validate user input (the address)
     if (address != ''):
         startAddr = address

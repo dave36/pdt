@@ -32,10 +32,9 @@ fingerprinting_description = ("""
 Fingerprinting modules to obtain information of the target""")
 
 fingerprinting_options = ['Open ports',
-             'Protocol used',
+             'Scan PLCs',
              'Modbus',
              'Siemens S7',
-             'To do',
              'Back']
 
 fingerprinting_modbus_description = ("""
@@ -64,8 +63,7 @@ Modules to exploit the target""")
 
 exploitation_options = ['Common ICS Default Passwords',
              'Modbus',
-             'To do',
-             'To do',
+             'Siemens S7',
              'Back']
 
 exploitation_modbus_description = ("""
@@ -74,6 +72,13 @@ Modbus modules to exploit the target""")
 exploitation_modbus_options = ['Write Single Register',
              'Write Single Coil',
              'To do',
+             'To do',
+             'Back']
+
+exploitation_siemens_description = ("""
+Siemens modules to exploit the target""")
+
+exploitation_siemens_options = ['S7 Password hashes extractor from PLF files',
              'To do',
              'Back']
 

@@ -1,18 +1,18 @@
 import validators
 import re
 
+
 def validate_ip(ip):
     """Function to validate the ip given"""
     if (is_valid_ip(ip) == False):
-      print("IP format incorrect")
-      return False
+        print("IP format incorrect")
+        return False
     return True
 
 
 def validate_domain_name(name):
     """Function to validate de domain name given"""
     if (is_valid_domain(name) == False):
-        print("Domain name format incorrect")
         return False
     return True
 
@@ -20,21 +20,23 @@ def validate_domain_name(name):
 def validate_ip_and_domain_name(target):
     """Function to validate both ip and domain name given"""
     if (is_valid_ip(target) or is_valid_domain(target)) == True:
-      return True
-    print("IP or domain name format incorrect")
+        return True
     return False
 
 
 def is_valid_ip(ip):
-    """Auxiliary function to validate ipv4 or ipv6"""
-    if (is_valid_ipv4(ip) or is_valid_ipv6(ip)) == True:
-      return True
+    """Auxiliary function to validate ipv4"""
+    if (is_valid_ipv4(ip)):
+        return True
     else:
-      return False
+        return False
 
 
 def is_valid_ipv4(ip):
     """Validates IPv4 address"""
+    if (ip == ''):
+        print("Error. Incorrect input. The ip cannot be blank.")
+        return False
     pattern = re.compile(r"""
         ^
         (?:
@@ -69,44 +71,57 @@ def is_valid_ipv4(ip):
         )
         $
     """, re.VERBOSE | re.IGNORECASE)
-    return pattern.match(ip) is not None
-
-
-def is_valid_ipv6(ip):
-    """Validates IPv6 addresses"""
-    pattern = re.compile(r"""
-        ^
-        \s*                         # Leading whitespace
-        (?!.*::.*::)                # Only a single whildcard allowed
-        (?:(?!:)|:(?=:))            # Colon iff it would be part of a wildcard
-        (?:                         # Repeat 6 times:
-            [0-9a-f]{0,4}           # A group of at most four hexadecimal digits
-            (?:(?<=::)|(?<!::):)    # Colon unless preceeded by wildcard
-        ){6}                        #
-        (?:                         # Either
-            [0-9a-f]{0,4}           # Another group
-            (?:(?<=::)|(?<!::):)    # Colon unless preceeded by wildcard
-            [0-9a-f]{0,4}           # Last group
-            (?: (?<=::)             # Colon iff preceeded by exacly one colon
-             |  (?<!:)              #
-             |  (?<=:) (?<!::) :    #
-             )                      # OR
-         |                          # A v4 address with NO leading zeros
-            (?:25[0-4]|2[0-4]\d|1\d\d|[1-9]?\d)
-            (?: \.
-                (?:25[0-4]|2[0-4]\d|1\d\d|[1-9]?\d)
-            ){3}
-        )
-        \s*                         # Trailing whitespace
-        $
-    """, re.VERBOSE | re.IGNORECASE | re.DOTALL)
-    return pattern.match(ip) is not None
+    if (pattern.match(ip) is not None):
+        return True
+    print("Error. The IPv4 format is incorrect.")
+    return False
 
 
 def is_valid_domain(name):
     """Validates domain names"""
     if (validators.domain(name) == True):
-      return True
+        return True
+    print("Error. Domain name format is incorrect.")
     return False
 
 
+def is_valid_register(register):
+    if (register == ''):
+        print("Error. Incorrect input. The register cannot be blank.")
+        return False
+    if (register != ''):
+        try:
+            register = int(register)
+        except:
+            print("Error. Incorrect input. The given register is not an integer.")
+            return False
+    if (register < 0 or register > 65535):
+        print("Error. Incorrect input. The register should be greater than 0 and less than 65536.")
+        return False
+    return True
+
+
+def is_valid_uid(uid):
+    if (uid == ''):
+        print("Error. Incorrect input. The uid cannot be blank.")
+        return False
+    if (uid != ''):
+        try:
+            uid = int(uid)
+        except:
+            print("Error. Incorrect input. The given uid is not an integer.")
+            return False
+    if (uid < 0 or uid > 255):
+        print("Error. Incorrect input. The uid should be greater than 0 and less than 256.")
+        return False
+    return True
+
+def is_valid_coil_value(coil_value):
+    if (coil_value == ''):
+        print("Error. Incorrect input. The coil value cannot be blank.")
+        return False
+    coil_value_upper = coil_value.upper()
+    if (coil_value_upper == "ON" or coil_value_upper == "OFF"):
+        return True
+    print("Error. Incorrect input. The coil value can only be ON or OFF.")
+    return False
