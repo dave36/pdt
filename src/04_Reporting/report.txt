@@ -1,82 +1,17 @@
 Begin of the automatic report from PDT
 
-Result of reading holding registers
-[-] Modbus is not running on : a
-Result of scanning the modbus target
-{'127.0.0.1': {'status': {'state': 'up', 'reason': 'user-set'}, 'hostnames': [{'type': 'PTR', 'name': 'localhost'}], 'vendor': {}, 'addresses': {'ipv4': '127.0.0.1'}, 'tcp': {502: {'product': '', 'state': 'closed', 'version': '', 'name': 'mbap', 'conf': '3', 'extrainfo': '', 'reason': 'conn-refused', 'cpe': ''}}}}
-Result of scanning the modbus target
-{}
-Result of scanning the modbus target
-{'0.18.201.127': {'status': {'state': 'up', 'reason': 'user-set'}, 'hostnames': [{'type': 'user', 'name': '1231231'}], 'vendor': {}, 'addresses': {'ipv4': '0.18.201.127'}, 'tcp': {502: {'product': '', 'state': 'filtered', 'version': '', 'name': 'mbap', 'conf': '3', 'extrainfo': '', 'reason': 'no-response', 'cpe': ''}}}}
-Result of UID scan:
-[+] Start Brute Force UID on : 127.0.0.1
-Result of UID scan:
-[+] Start Brute Force UID on : 12312
-Result of UID scan:
-[+] Start Brute Force UID on : a
-Result of scanning the modbus target
-{'127.0.0.1': {'status': {'state': 'up', 'reason': 'user-set'}, 'hostnames': [{'type': 'PTR', 'name': 'localhost'}], 'vendor': {}, 'addresses': {'ipv4': '127.0.0.1'}, 'tcp': {502: {'product': '', 'state': 'closed', 'version': '', 'name': 'mbap', 'conf': '3', 'extrainfo': '', 'reason': 'conn-refused', 'cpe': ''}}}}
-Result of scanning the modbus target
-{}
-Result of scanning the modbus target
-{'0.18.201.127': {'status': {'state': 'up', 'reason': 'user-set'}, 'hostnames': [{'type': 'user', 'name': '1231231'}], 'vendor': {}, 'addresses': {'ipv4': '0.18.201.127'}, 'tcp': {502: {'product': '', 'state': 'filtered', 'version': '', 'name': 'mbap', 'conf': '3', 'extrainfo': '', 'reason': 'no-response', 'cpe': ''}}}}
-Result of UID scan:
-[+] Start Brute Force UID on : 127.0.0.1
-Result of UID scan:
-[+] Start Brute Force UID on : 12312
-Result of UID scan:
-[+] Start Brute Force UID on : a
-google.com.		9	IN	AAAA	2001:4860:4802:38::75
-google.com.		9	IN	A	216.239.32.117
-google.com.		9	IN	A	216.239.36.117
-google.com.		9	IN	A	216.239.38.117
-google.com.		9	IN	A	216.239.34.117
+google.es.		299	IN	A	172.217.8.3
+google.es.		299	IN	AAAA	2607:f8b0:4004:803::2003
+google.es.		21599	IN	NS	ns1.google.com.
+google.es.		599	IN	MX	10 aspmx.l.google.com.
+google.es.		599	IN	MX	40 alt3.aspmx.l.google.com.
+google.es.		599	IN	MX	50 alt4.aspmx.l.google.com.
+google.es.		599	IN	MX	30 alt2.aspmx.l.google.com.
+google.es.		21599	IN	CAA	0 issue "pki.goog"
+google.es.		599	IN	MX	20 alt1.aspmx.l.google.com.
+google.es.		21599	IN	NS	ns3.google.com.
+google.es.		59	IN	SOA	ns1.google.com. dns-admin.google.com. 292107793 900 900 1800 60
+google.es.		21599	IN	NS	ns4.google.com.
+google.es.		299	IN	TXT	"v=spf1 -all"
+google.es.		21599	IN	NS	ns2.google.com.
 
-8.8.8.8 dns.google
-
-Address       = 8.8.8.8
-Network       = 8.8.8.8 / 32
-Netmask       = 255.255.255.255
-Broadcast     = not needed on Point-to-Point links
-Wildcard Mask = 0.0.0.0
-Hosts Bits    = 0
-Max. Hosts    = 1   (2^0 - 0)
-Host Range    = { 8.8.8.8 - 8.8.8.8 }
-   Domain Name: GOOGLE.COM
-   Registry Domain ID: 2138514_DOMAIN_COM-VRSN
-   Registrar WHOIS Server: whois.markmonitor.com
-   Registrar URL: http://www.markmonitor.com
-   Updated Date: 2019-09-09T15:39:04Z
-   Creation Date: 1997-09-15T04:00:00Z
-   Registry Expiry Date: 2028-09-14T04:00:00Z
-   Registrar: MarkMonitor Inc.
-   Registrar IANA ID: 292
-   Registrar Abuse Contact Email: abusecomplaints@markmonitor.com
-   Registrar Abuse Contact Phone: +1.2083895740
-   Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
-   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
-   Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
-   Domain Status: serverDeleteProhibited https://icann.org/epp#serverDeleteProhibited
-   Domain Status: serverTransferProhibited https://icann.org/epp#serverTransferProhibited
-   Domain Status: serverUpdateProhibited https://icann.org/epp#serverUpdateProhibited
-   Name Server: NS1.GOOGLE.COM
-   Name Server: NS2.GOOGLE.COM
-   Name Server: NS3.GOOGLE.COM
-   Name Server: NS4.GOOGLE.COM
-   DNSSEC: unsigned
-   URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
->>> Last update of whois database: 2020-01-29T18:15:57Z <<<
-
-For more information on Whois status codes, please visit https://icann.org/epp
-
-
-
-The Registry database contains ONLY .COM, .NET, .EDU domains and
-Registrars.
-
-Result of port scanning the target
-{'127.0.0.1': {'status': {'state': 'up', 'reason': 'conn-refused'}, 'hostnames': [{'type': 'PTR', 'name': 'localhost'}], 'vendor': {}, 'addresses': {'ipv4': '127.0.0.1'}, 'tcp': {3128: {'product': 'Squid http proxy', 'state': 'open', 'version': '3.5.27', 'name': 'http-proxy', 'conf': '10', 'script': {'http-server-header': 'squid/3.5.27', 'http-open-proxy': 'Potentially OPEN proxy.\nMethods supported: GET HEAD', 'http-title': 'ERROR: The requested URL could not be retrieved'}, 'extrainfo': '', 'reason': 'syn-ack', 'cpe': 'cpe:/a:squid-cache:squid:3.5.27'}, 902: {'product': 'VMware Authentication Daemon', 'state': 'open', 'version': '1.10', 'name': 'vmware-auth', 'conf': '10', 'extrainfo': 'Uses VNC, SOAP', 'reason': 'syn-ack', 'cpe': ''}, 631: {'product': 'CUPS', 'state': 'open', 'version': '2.2', 'name': 'ipp', 'conf': '10', 'script': {'http-methods': '\n  Potentially risky methods: PUT', 'http-robots.txt': '1 disallowed entry \n/', 'http-server-header': 'CUPS/2.2 IPP/2.1', 'http-title': 'Inicio - CUPS 2.2.7'}, 'extrainfo': '', 'reason': 'syn-ack', 'cpe': 'cpe:/a:apple:cups:2.2'}}}}
-Result of port scanning the target
-{}
-Result of port scanning the target
-{}
