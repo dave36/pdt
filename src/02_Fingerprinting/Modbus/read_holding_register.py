@@ -6,6 +6,9 @@ from System.Core.Global import *
 from System.Core.Colors import *
 from System.Core.Modbus import *
 
+sys.path.append('src/04_Reporting/')
+from report_log import *
+
 
 startAddr = '0x0001'
 

@@ -43,11 +43,11 @@ Fingerprinting modbus functions to interact with the Modbus devices and get some
 fingerprinting_modbus_options = ['Modbus Information',
              'UID Scanner',
              'Enumeration Function on Modbus',
-             'Read Coils',
-             'Read Discrete Input',
-             'Read Exception Status',
              'Read Holding Registers',
+             'Read Coils',
+             'Read Status of Discrete Inputs',
              'Read Inputs Registers',
+             'Read Exception Status',
              'Back']
 
 fingerprinting_siemens_description = ("""

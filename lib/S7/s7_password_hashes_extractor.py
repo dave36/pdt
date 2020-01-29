@@ -20,7 +20,7 @@ import optparse
 from binascii import hexlify
 from hashlib import sha1
 
-cfg_result_hashes = 's7_password_hashes_extractor.hashes'
+cfg_result_hashes = 'reports/s7_password_hashes_extractor.hashes'
 
 if __name__ == '__main__':
     parser = optparse.OptionParser()
@@ -34,9 +34,9 @@ if __name__ == '__main__':
     data = open(options.project_file, 'rb').read()
     print "read PEData file %s, size 0x%X bytes" % (options.project_file, os.path.getsize(options.project_file))
     
-    print "sample of used passwords and hashes:"
-    for p in ['123', '1234AaBb', '1234AaB', '1111111111aaaaaaaaaa']:
-        print "\t%s : %s" % (p, sha1(p).hexdigest())
+    #print "sample of used passwords and hashes:"
+    #for p in ['123', '1234AaBb', '1234AaB', '1111111111aaaaaaaaaa']:
+    #    print "\t%s : %s" % (p, sha1(p).hexdigest())
 
     re_pattern = re.compile('456e6372797074656450617373776f72[a-f0-9]{240,360}000101000000[a-f0-9]{40}')
     possible_hashes = [s[-40:] for s in re_pattern.findall(hexlify(data))]
@@ -44,7 +44,7 @@ if __name__ == '__main__':
     open(cfg_result_hashes, 'w').write('\n'.join(possible_hashes))
     
     total_hashes = len(possible_hashes)
-    print "found %d sha1 hashes, ordered by histrory list:" % (total_hashes)
+    print "found %d sha1 hashes, ordered by history list:" % (total_hashes)
     for h in possible_hashes:
         pos = possible_hashes.index(h) + 1
         if pos == total_hashes:

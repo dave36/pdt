@@ -180,43 +180,43 @@ def fingerprinting_modbus_menu():
             raw_input("Press {return} to continue")
             fingerprinting_modbus_menu()
             return
-        # Choice 4: Read coils
+        # Choice 4: Read holding registers
         if choice == '4':
-            target = raw_input("Enter the IPv4 target: ")
-            uid = raw_input("Enter the UID Modbus: ")
-            read_coils(target, uid)
-            raw_input("Press {return} to continue")
-            fingerprinting_modbus_menu()
-            return
-        # Choice 5: Read discrete inputs
-        if choice == '5':
-            target = raw_input("Enter the IPv4 target: ")
-            uid = raw_input("Enter the UID Modbus: ")
-            read_discrete_input(target, uid)
-            raw_input("Press {return} to continue")
-            fingerprinting_modbus_menu()
-            return
-        # Choice 6: Read exception status
-        if choice == '6':
-            target = raw_input("Enter the IPv4 target: ")
-            uid = raw_input("Enter the UID Modbus: ")
-            read_exception_status(target, uid)
-            raw_input("Press {return} to continue")
-            fingerprinting_modbus_menu()
-            return
-        # Choice 7: Read holding registers
-        if choice == '7':
             target = raw_input("Enter the IPv4 target: ")
             uid = raw_input("Enter the UID Modbus: ")
             read_holding_register(target, uid)
             raw_input("Press {return} to continue")
             fingerprinting_modbus_menu()
             return
-        # Choice 8: Read inputs registers
-        if choice == '8':
+        # Choice 5: Read coils
+        if choice == '5':
+            target = raw_input("Enter the IPv4 target: ")
+            uid = raw_input("Enter the UID Modbus: ")
+            read_coils(target, uid)
+            raw_input("Press {return} to continue")
+            fingerprinting_modbus_menu()
+            return
+        # Choice 6: Read status of discrete inputs
+        if choice == '6':
+            target = raw_input("Enter the IPv4 target: ")
+            uid = raw_input("Enter the UID Modbus: ")
+            read_discrete_input(target, uid)
+            raw_input("Press {return} to continue")
+            fingerprinting_modbus_menu()
+            return
+        # Choice 7: Read inputs registers
+        if choice == '7':
             target = raw_input("Enter the IPv4 target: ")
             uid = raw_input("Enter the UID Modbus: ")
             read_input_register(target, uid)
+            raw_input("Press {return} to continue")
+            fingerprinting_modbus_menu()
+            return
+        # Choice 8: Read exception status
+        if choice == '8':
+            target = raw_input("Enter the IPv4 target: ")
+            uid = raw_input("Enter the UID Modbus: ")
+            read_exception_status(target, uid)
             raw_input("Press {return} to continue")
             fingerprinting_modbus_menu()
             return
