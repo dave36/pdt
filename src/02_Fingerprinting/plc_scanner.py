@@ -1,5 +1,6 @@
 import nmap
 import sys
+import os
 
 from src.util.validator import *
 

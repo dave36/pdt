@@ -4,5 +4,6 @@ python:
 cache: pip
 install:
     - pip install -r requirements.txt
+    - apt-get install nmap
 script:
     - python -m unittest discover -s tests
