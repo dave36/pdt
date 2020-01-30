@@ -1,17 +1,3 @@
 Begin of the automatic report from PDT
 
-google.es.		299	IN	A	172.217.8.3
-google.es.		299	IN	AAAA	2607:f8b0:4004:803::2003
-google.es.		21599	IN	NS	ns1.google.com.
-google.es.		599	IN	MX	10 aspmx.l.google.com.
-google.es.		599	IN	MX	40 alt3.aspmx.l.google.com.
-google.es.		599	IN	MX	50 alt4.aspmx.l.google.com.
-google.es.		599	IN	MX	30 alt2.aspmx.l.google.com.
-google.es.		21599	IN	CAA	0 issue "pki.goog"
-google.es.		599	IN	MX	20 alt1.aspmx.l.google.com.
-google.es.		21599	IN	NS	ns3.google.com.
-google.es.		59	IN	SOA	ns1.google.com. dns-admin.google.com. 292107793 900 900 1800 60
-google.es.		21599	IN	NS	ns4.google.com.
-google.es.		299	IN	TXT	"v=spf1 -all"
-google.es.		21599	IN	NS	ns2.google.com.
-
+Result of scanning the modbus target
