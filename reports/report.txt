@@ -1,0 +1,5 @@
+Begin of the automatic report from PDT
+
+
+Result of scanning the modbus target
+{'127.0.0.1': {'status': {'state': 'up', 'reason': 'user-set'}, 'hostnames': [{'type': 'PTR', 'name': 'localhost'}], 'vendor': {}, 'addresses': {'ipv4': '127.0.0.1'}, 'tcp': {502: {'product': '', 'state': 'closed', 'version': '', 'name': 'mbap', 'conf': '3', 'extrainfo': '', 'reason': 'conn-refused', 'cpe': ''}}}}

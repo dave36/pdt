@@ -129,5 +129,25 @@ class FingerprintingModbusTestSuite(unittest.TestCase):
         result = read_exception_status(target,uid)
         self.assertIsNone(result)
 
+    def test_ask_address(self):
+        # Initialize variables to handle input and output to test
+        input_test = StringIO(str("1"))
+        out_test = StringIO()
+        # Store the input and output
+        sys.stdin = input_test
+        sys.stdout = out_test
+        # Function to test
+        self.assertTrue(ask_address())
+
+    def test_ask_address_wrong_input(self):
+        # Initialize variables to handle input and output to test
+        input_test = StringIO(str("a"))
+        out_test = StringIO()
+        # Store the input and output
+        sys.stdin = input_test
+        sys.stdout = out_test
+        # Function to test
+        self.assertFalse(ask_address())
+
 if __name__ == '__main__':
     unittest.main()

@@ -1,6 +1,6 @@
 import sys
 
-log_path = "src/04_Reporting/report.txt"
+log_path = "reports/report.txt"
 
 def modbus_report_log(ans):
     stdoutOrigin=sys.stdout 
@@ -16,7 +16,7 @@ def report_log(text):
     outfile.close()
 
 def reset_log():
-    with open("src/04_Reporting/report.txt",'w') as outfile:
+    with open(log_path,'w') as outfile:
         outfile.write("Begin of the automatic report from PDT\n\n")
     outfile.close()
 
