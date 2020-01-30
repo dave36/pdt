@@ -14,6 +14,11 @@
 ## 🚀 Getting Started
 
 The Pentesting Driven Tool for Industrial Control Systems and SCADA
+It has 4 main phases:
+- Footprinting
+- Fingerprinting
+- Exploitation
+- Reporting
 
 ### :inbox_tray: Installing :inbox_tray:
 
