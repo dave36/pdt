@@ -71,29 +71,18 @@ Modbus modules to exploit the target""")
 
 exploitation_modbus_options = ['Write Single Register',
              'Write Single Coil',
-             'To do',
-             'To do',
              'Back']
 
 exploitation_siemens_description = ("""
 Siemens modules to exploit the target""")
 
 exploitation_siemens_options = ['S7 Password hashes extractor from PLF files',
-             'To do',
              'Back']
 
 reports_description = ("""
 Get the report of the results of the security audit""")
 
 reports_options = ['Text Report',
-             'HTML Report',
-             'Back']
-
-update_description = ("""
-What do you want to update?""")
-
-update_options = ['PDT',
-             'Metasploit Modules',
              'Back']
 
 help_description = ("""

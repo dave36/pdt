@@ -301,13 +301,6 @@ def exploitation_siemens_menu():
             raw_input("Press {return} to continue")
             exploitation_siemens_menu()
             return
-        if choice == '2':
-            target = raw_input("Enter the IPv4 target: ")
-            uid = raw_input("Enter the UID Modbus: ")
-            write_single_coils(target, uid)
-            raw_input("Press {return} to continue")
-            exploitation_modbus_menu()
-            return
         if choice == str(len(text.exploitation_siemens_options)):   # Dont need to know which is the last option
             break
 
@@ -326,13 +319,10 @@ def reports_menu():
 
 def update_menu():
     while 1:
-        create_menu(text.update_description, text.update_options)
-        choice = raw_input()
-        if choice == '1':
-            break
-        if choice == str(len(text.update_options)):   # Dont need to know which is the last option
-            break
-
+        print("Updating from GitHub...")
+	os.system("git pull")
+	raw_input("\nPress {return} to continue")
+	return
 
 def help_menu():
     create_menu(text.help_description, text.help_options)

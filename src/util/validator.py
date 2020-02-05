@@ -120,6 +120,11 @@ def is_valid_coil_value(coil_value):
     if (coil_value == ''):
         print("Error. Incorrect input. The coil value cannot be blank.")
         return False
+    try:
+            coil_value = str(coil_value)
+    except:
+            print("Error. Incorrect input. The given value is not ON or OFF.")
+            return False
     coil_value_upper = coil_value.upper()
     if (coil_value_upper == "ON" or coil_value_upper == "OFF"):
         return True
