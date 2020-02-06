@@ -19,6 +19,12 @@ def printLine(str,color):
         print str
 
 def get_functions(ip, uid):
+	"""Function to get the functions on the modbus UID device running
+	:params
+		ip - The address of the modbus device
+		uid - The UID slave of modbus
+    :return
+        No return, just output the results"""
 	c = connectToTarget(ip,502)
 	report_log("Result of getting functions")
 	if(c == None):

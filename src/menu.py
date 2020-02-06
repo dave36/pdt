@@ -229,18 +229,21 @@ def fingerprinting_siemens_menu():
     while 1:
         create_menu(text.fingerprinting_siemens_description, text.fingerprinting_siemens_options)
         choice = raw_input("(pdt/fingerprinting/siemens_s7) > ")
+        # Choice 1: Discover siemens S7 devices
         if choice == '1':
             target = raw_input("Enter the IPv4 target: ")
             discover_siemens(target)
             raw_input("Press {return} to continue")
             fingerprinting_siemens_menu()
             return
+        # Choice 2: Enumerate siemens S7 devices
         if choice == '2':
             target = raw_input("Enter the IPv4 target: ")
             enumerate_siemens(target)
             raw_input("Press {return} to continue")
             fingerprinting_siemens_menu()
             return
+        # Choice 3: S7 scan
         if choice == '3':
             target = raw_input("Enter the IPv4 target: ")
             scan_siemens(target)
@@ -274,6 +277,7 @@ def exploitation_modbus_menu():
     while 1:
         create_menu(text.exploitation_modbus_description, text.exploitation_modbus_options)
         choice = raw_input("(pdt/exploitation/modbus) > ")
+        # Choice 1: Write single register
         if choice == '1':
             target = raw_input("Enter the IPv4 target: ")
             uid = raw_input("Enter the UID Modbus: ")
@@ -281,6 +285,7 @@ def exploitation_modbus_menu():
             raw_input("Press {return} to continue")
             exploitation_modbus_menu()
             return
+        # Choice 2: Write single coil
         if choice == '2':
             target = raw_input("Enter the IPv4 target: ")
             uid = raw_input("Enter the UID Modbus: ")
@@ -295,6 +300,7 @@ def exploitation_siemens_menu():
     while 1:
         create_menu(text.exploitation_siemens_description, text.exploitation_siemens_options)
         choice = raw_input("(pdt/exploitation/siemens) > ")
+        # Choice 1: Extract password hashes
         if choice == '1':
             file = raw_input("Enter the path to the PLF file: ")
             extract_s7_password_hashes(file)
@@ -308,6 +314,7 @@ def reports_menu():
     while 1:
         create_menu(text.reports_description, text.reports_options)
         choice = raw_input("(pdt/reports) > ")
+        # Choice 1: Text report
         if choice == '1':
             show_report()
             raw_input("Press {return} to continue")

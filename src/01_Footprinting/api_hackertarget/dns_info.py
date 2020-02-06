@@ -7,7 +7,7 @@ from report_log import *
 def obtain_dns_info(target):
     """Function to get the information of the DNS records for a domain
     :return
-        No return. Output the results obtained"""
+        Return the response obtained"""
     # Request to the API to obtain the info
     url = "https://api.hackertarget.com/dnslookup/?q="+target
     request = requests.get(url)

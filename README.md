@@ -14,6 +14,7 @@
 ## 🚀 Getting Started
 
 The Pentesting Driven Tool for Industrial Control Systems and SCADA
+
 It has 4 main phases:
 - Footprinting
 - Fingerprinting
@@ -22,7 +23,7 @@ It has 4 main phases:
 
 ### :inbox_tray: Installing :inbox_tray:
 
-A step by step guide to get a development env running
+A step by step guide to get a development env running. It's highly recommended to run the application on Kali Linux (or another similar Linux).
 
 Clone the repository
 

@@ -22,6 +22,12 @@ def printLine(str,color):
         print str
 
 def read_holding_register(ip, uid):
+    """Function to read the holding register on the modbus UID device running
+    :params
+		ip - The address of the modbus device
+		uid - The UID slave of modbus
+    :return
+        No return, just output the results"""
     if (ask_address() and is_valid_ipv4(ip) and is_valid_uid(uid)):
         c = connectToTarget(ip,502)
         report_log("Result of reading holding registers")

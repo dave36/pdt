@@ -19,6 +19,11 @@ def printLine(str,color):
         print str
 
 def scan_uid(ip):
+    """Function to scan every UID running on the modbus device
+    :params
+		ip - The address of the modbus device
+    :return
+        No return, just output the results"""
     report_log('Result of UID scan:\n[+] Start Brute Force UID on : ' + ip)
     printLine('[+] Start Brute Force UID on : ' + ip,bcolors.OKGREEN)
     for i in range(1,256): # Total of possible uid values (0-255)

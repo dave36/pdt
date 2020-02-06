@@ -16,6 +16,12 @@ def printLine(str,color):
         print str
 
 def read_exception_status(ip, uid):
+    """Function to read the exception status on the modbus UID device running
+    :params
+		ip - The address of the modbus device
+		uid - The UID slave of modbus
+    :return
+        No return, just output the results"""
     c = connectToTarget(ip,502)
     if(c == None):
         printLine('[-] Modbus is not running on : ' + ip,bcolors.WARNING)

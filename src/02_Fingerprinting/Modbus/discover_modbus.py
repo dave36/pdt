@@ -13,6 +13,11 @@ from System.Core.Modbus import *
 
 
 def discover_modbus(target):
+    """Function to discover the modbus devices running
+    :params
+		ip - The address of the modbus device
+    :return
+        No return, just output the results with pprint"""
     try:
         report_log("Result of scanning the modbus target")
         scanner = nmap.PortScanner()

@@ -7,6 +7,11 @@ from report_log import *
 
 
 def discover_siemens(target):
+    """Function to discover the siemens devices
+    :params
+		target - The address of the siemens device
+    :return
+        No return, just output the results"""
     try:
         report_log("Result of scanning the siemens target")
         scanner = nmap.PortScanner()
